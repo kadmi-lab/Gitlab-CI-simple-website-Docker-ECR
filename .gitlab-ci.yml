@@ -8,7 +8,7 @@ publish:
   image: 
     name: amazon/aws-cli
     entrypoint: [""]
-  service:
+  services:
     - docker:dind
   before_script:
     - amazon-linux-extras install docker
