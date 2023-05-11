@@ -6,22 +6,23 @@
 2. A GitLab repository that contains the source code for the application
 3. An Amazon Web Services (AWS) account
 4. A Dockerfile that describes how to build the Docker image for the application
+5. New user AWS with AmazonEC2ContainerRegistryPowerUser access.
 
 ## Step 1: Set up an Amazon ECR repository
 
 1. Go to the AWS Management Console and navigate to Amazon ECR.
-2. Click on "Create repository" to create a new repository for the Docker image.
-3. Enter a name for the repository and click "Create repository".
-4. Note down the URL of the repository, as you will need it later in the GitLab CI/CD pipeline.
+2. Create a new repository for the Docker image.
+3. Note down the URL of the repository, as you will need it later in the GitLab CI/CD pipeline.
 
 ## Step 2: Create a GitLab CI/CD pipeline
 
 1. In the GitLab repository, create a new file named .gitlab-ci.yml.
-2. Copy and paste the following code into the file.
-
+2. Edit file code variables.
 3. Replace <ECR-REPOSITORY-URL> with the URL of the Amazon ECR repository you created in Step 1.
 4. Replace <AWS-REGION> with the region of your Amazon ECR repository.
 5. Replace <APP-NAME> with the name of your application.
+6. Copy created AWS user Access and Secret key to Gitlab Project settings Variables section with Key:
+AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 
 ## Step 3: Build and push the Docker image
 
